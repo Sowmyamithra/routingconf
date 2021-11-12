@@ -1,0 +1,49 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col'>
+            <p class='h3 text-warning mt-3'>Contacts List</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolor quam soluta, nobis a
+                temporibus rem inventore velit modi nesciunt.</p>
+        </div>
+    </div>
+</div>
+
+<div class='container mt-3'>
+    <div class='row'>
+        <div class='col'>
+            <table class='table table-hover table-striped text-center'>
+                <thead class='bg-secondary text-white'>
+                    <tr>
+                        <th>SNo.</th>
+                        <th>Photo</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Location</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let contact of contacts'>
+                        <td>{{contact.login.uuid.substring(contact.login.uuid.length - 4)}}</td>
+                        <td>
+                            <img [src]='contact.picture.large' alt='' width='50' height='50'>
+                        </td>
+                        <td>
+                            {{contact.name.first}} {{contact.name.last}}
+                        </td>
+                        <td>{{contact.dob.age}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>
+                            {{contact.location.city}}
+                        </td>
+                        <td>
+                            <a routerLink='/contact/{{contact.login.uuid}}'
+                                class='text-light text-decoration-none text-dark h5'><i class="bi bi-eye-fill"></i> </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

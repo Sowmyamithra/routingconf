@@ -1,0 +1,49 @@
+<section class='mt-3' *ngIf='isNotEmpty()'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='card shadow-lg'>
+                    <div class='card-header bg-secondary text-white'>
+                        <p class='h4 fw-bold'>
+                            {{contact.name.first}} {{contact.name.last}}
+                        </p>
+                    </div>
+                    <div class='card-body'>
+                        <div class='row'>
+                            <div class='col-md-3'>
+                                <img [src]='contact.picture.large' alt='' width='80' height='80'>
+                            </div>
+                            <div class='col-md-9'>
+                                <ul class='list-group'>
+                                    <li class='list-group-item'>
+                                        ID: {{contact.login.uuid}}
+                                    </li>
+                                    <li class='list-group-item'>
+                                        Name: {{contact.name.first}} {{contact.name.last}}
+                                    </li>
+                                    <li class='list-group-item'>
+                                        Age: {{contact.dob.age}} yrs
+                                    </li>
+                                    <li class='list-group-item'>
+                                        Email: {{contact.email}}
+                                    </li>
+                                    <li class='list-group-item'>
+                                        City: {{contact.location.city}}
+                                    </li>
+                                    <li class='list-group-item'>
+                                        State: {{contact.location.state}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='card-footer'>
+                        <a routerLink='/contact' class='btn btn-primary text-white text-decoration-none'>
+                            <i class="bi bi-arrow-90deg-left"></i> Go Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
